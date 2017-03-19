@@ -1,5 +1,5 @@
 'use strict';
-const patterns = require('../patterns');  // Is going to process patterns that are in patterns folderbefore passing it to off to bot.
+const patterns = require('../patterns');  // Is going to process patterns that are in patterns folderbefore passing it to off to bot. Call with two dots
 const XRegExp =  require('xregexp');    // It should require for the xregexp to be used inside patterns.
 
 let matchPattern = (str, cb) => {         // cb is the call back function and str is users input
@@ -12,7 +12,8 @@ let matchPattern = (str, cb) => {         // cb is the call back function and st
     return cb({
       intent: getResult.intent
     });
-  } else{         // If pattern isnt real.
+  } else {         // If pattern isnt real.
     return cb({});
   }
 }
+module.exports = matchPattern;          // export pattern matcher.
