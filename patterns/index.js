@@ -4,6 +4,9 @@ const patternDict = [{
 }, {
   pattern: '\\b(bye|goodbye|see ya|later)\\b',
   intent: 'Exit'
+},{
+  pattern: 'like\\sin\\s(?<city>.+)',  // what is the weather condition at a place.
+  intent: 'CurrentWeather'
 }];
 
 module.exports = patternDict;

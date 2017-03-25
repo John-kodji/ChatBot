@@ -21,6 +21,11 @@ case 'Exit':              // When user says anything with intent of ending conve
       console.log("Goodbye Friend");    // Bot reply
       process.exit(0);        //Bot should exit from chat.
       break;
+case 'CurrentWeather':
+    console.log(`Checking weather for ${data.entities.city} ...`);
+    rl.prompt()
+    break;
+
     default: {
       console.log("Sorry I don't understand:(")   // In case where input isnt in bots data. How it should reply
     }
