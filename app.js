@@ -14,8 +14,12 @@ rl.on('line', reply => {
   matcher(reply, data => {
     switch(data.intent) {
       case 'Hello':
-      console.log("Hey Great... Hope you good?");   // Bots reply
+      console.log(`${data.entities.greeting} what can i do for you?`);   // Bots reply with exact input user gave and adds for request.
       rl.prompt
+      break;
+case 'Exit':              // When user says anything with intent of ending conversation
+      console.log("Goodbye Friend");    // Bot reply
+      process.exit(0);        //Bot should exit from chat.
       break;
     default: {
       console.log("Sorry I don't understand:(")   // In case where input isnt in bots data. How it should reply
